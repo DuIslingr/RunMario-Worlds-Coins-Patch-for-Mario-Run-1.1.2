@@ -19,7 +19,7 @@ sandbox. By disassenble the binary, `fileExistsAtPath` is found to use for check
 some pathes outside the sandbox.
 
 ## Added
-- Unlock all words
+- Unlock all worlds
 - Unlimited coins
 
 ## Credits
