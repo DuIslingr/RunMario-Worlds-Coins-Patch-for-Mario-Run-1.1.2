@@ -2,9 +2,9 @@ Package: com.gao.runmario
 Name: RunMario
 Depends: mobilesubstrate, firmware (>= 10.0)
 Priority: optional
-Version: 0.1
+Version: 1.1.2
 Architecture: iphoneos-arm
-Description: allow playing SuperMarioRun on jailbreak device
-Maintainer: Gao <Gaojiji@gmail.com>
-Author: Gao <Gaojiji@gmail.com>
+Description: allow playing SuperMarioRun on jailbreak device + unlock all worlds and gives coins.
+Maintainer: Gao <Gaojiji@gmail.com> and Sterling (www.aijunkiez.xyz)
+Author: Gao <Gaojiji@gmail.com> and Sterling (www.aijunkiez.xyz)
 Section: Tweaks
