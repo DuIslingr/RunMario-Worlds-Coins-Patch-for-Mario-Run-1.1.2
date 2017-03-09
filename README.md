@@ -1,4 +1,4 @@
-# RunMario
+# RunMario+Patch - For Mario Run 1.1.2
 
 RunMario is a iOS tweak that allow you to play SuperMarioRun on a jailbreak device.
 
@@ -18,5 +18,9 @@ There are many methods of checking jailbreak state for an AppStore APP. The most
 sandbox. By disassenble the binary, `fileExistsAtPath` is found to use for checking. Just hook this method and return NO for 
 some pathes outside the sandbox.
 
+## Added
+- Unlock all words
+- Unlimited coins
+
 ## Credits
-thank @Qusic for [Xgress](https://github.com/Qusic/Xgress), as an example.
+Leavez for the original JB patch, and Sterling0x1 for world unlock and coins.
