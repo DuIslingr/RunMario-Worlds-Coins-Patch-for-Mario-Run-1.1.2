@@ -1,3 +1,4 @@
+#include "vm_writeData.h"
 
 BOOL allowAccess(NSString *filename) {
    NSArray *NotAllowedPathPrefixes =
@@ -35,3 +36,12 @@ BOOL allowAccess(NSString *filename) {
   return %orig;
 }
 %end
+
+%ctor {
+//com.nintendo.zara
+vm_writeData(0x1003ED328, 0x20008052);//unlock all worlds
+vm_writeData(0x1003ED32C, 0xC0035FD6);
+
+vm_writeData(0x10009564C, 0x00E0BF12);//Unlimited coins
+vm_writeData(0x100095650, 0xC0035FD6);
+}
