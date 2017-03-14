@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = mrsettings;
+		cell = PSLinkCell;
+		detail = "MRsettingsListController";
+		icon = "mrsettings.png";
+		isController = 1;
+		label = "Mario Run Cheats";
+	};
+}
