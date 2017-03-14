@@ -1,4 +1,5 @@
 ARCHS = arm64
+TARGET = iphone:9.3
 TARGET_IPHONEOS_DEPLOYMENT_VERSION = 8.0
 TARGET_STRIP_FLAGS = -u -r -s /dev/null
 

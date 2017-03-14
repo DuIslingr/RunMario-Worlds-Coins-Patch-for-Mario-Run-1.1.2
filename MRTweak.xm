@@ -3,6 +3,8 @@
 #include <substrate.h>
 #include "ConfigLite.h"
 
+uintptr_t awesomesauce = 0x0;
+
 CNDeclare(world164, 0x1003ED328);
 CNDeclare(coins64, 0x10009564C);
 
@@ -98,6 +100,8 @@ hidme void didFinishLaunching(CFNotificationCenterRef center, void *observer, CF
       {
           coinsPatch->Reset();
       }
+            });
+    });
 }
 
 CNConstructor(Charizard)

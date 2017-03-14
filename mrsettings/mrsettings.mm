@@ -2,6 +2,7 @@
 #include <Preferences/PSListController.h>
 #include <Preferences/PSSpecifier.h>
 #include <unistd.h>
+#include <spawn.h> 
 
 @interface MRsettingsListController: PSListController <UIAlertViewDelegate> {
 }
@@ -24,7 +25,7 @@
  }
 
 -(void)respring {
-    system("killall -9 SpringBoard");
+execl("killall", "killall", "killall -9 SpringBoard", NULL);
 }
 
 @end
