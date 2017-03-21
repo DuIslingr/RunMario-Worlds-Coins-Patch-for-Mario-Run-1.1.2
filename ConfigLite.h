@@ -5,11 +5,6 @@
 #import <mach/mach.h>
 #import <substrate.h>
 #import <dlfcn.h>
-#include <iostream>
-#include <iostream>
-#include <string>
-#include <vector>
-#include <sstream>
 #import <stdio.h>
 #import <stdlib.h>
 #import <sys/types.h>
@@ -28,8 +23,6 @@ struct ProgramVars {
 	const char***	 environPtr;
 	const char**	      __prognamePtr;
 };
-
-const char *title, *theMsg;
 
 /*
  Hides Code and puts it in the inject section of the __TEXT segment

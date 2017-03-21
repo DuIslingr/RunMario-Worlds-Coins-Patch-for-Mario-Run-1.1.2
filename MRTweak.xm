@@ -3,10 +3,12 @@
 #include <substrate.h>
 #include "ConfigLite.h"
 
-uintptr_t awesomesauce = 0x0;
+uint64_t awesomesauce = 0x0;
 
-CNDeclare(world164, 0x1003ED328);
+//CNDeclare(world164, 0x1003ED328); doesnt fully work
 CNDeclare(coins64, 0x10009564C);
+CNDeclare(bubble64, 0x100129AB8);
+CNDeclare(ticket64, 0x1004C02B0);
 
 BOOL allowAccess(NSString *filename) {
    NSArray *NotAllowedPathPrefixes =
@@ -75,37 +77,22 @@ hidme void didFinishLaunching(CFNotificationCenterRef center, void *observer, CF
         }
       
 
-      Settings settings = "mrsettings.plist";
+      //Patch *world1Patch = Patch::CreateInstrPatch((world164 + awesomesauce), "MOV W0, #1; RET");
+      Patch *coinsPatch = Patch::CreateInstrPatch((coins64 + awesomesauce), "MOVN W0, #0xFF00, LSL #16; RET");
+      Patch *bubblePatch = Patch::CreateInstrPatch((bubble64 + awesomesauce), "SUB W8, W8, #0");
+      Patch *ticketPatch = Patch::CreateInstrPatch((ticket64 + awesomesauce), "MOV X0, #99; RET");
 
-      Patch *world1Patch = Patch::CreateInstrPatch((world164 + awesomesauce), "MOV X0, #1; RET");
-      Patch *coinsPatch = Patch::CreateInstrPatch((coins64 + awesomesauce), "MOV W0, #0xFF00, LSL #16; RET");
-
-      bool world = settings["worldkey"];
-      bool coins = settings["coinskey"];
-
-      if (world)
-      {
-          world1Patch->Apply();
-      }
-      else
-      {
-          world1Patch->Reset();
-      }
-
-      if (coins)
-      {
-          coinsPatch->Apply();
-      }
-      else
-      {
-          coinsPatch->Reset();
-      }
+    //world1Patch->Apply();
+      coinsPatch->Apply();
+      bubblePatch->Apply();
+      ticketPatch->Apply();
             });
-    });
+
+    }); 
 }
 
 CNConstructor(Charizard)
 {
-    awesomesauce = (uintptr_t)_dyld_get_image_vmaddr_slide(0);
+    awesomesauce = (uint64_t)_dyld_get_image_vmaddr_slide(0);
     CFNotificationCenterAddObserver(CFNotificationCenterGetLocalCenter(), NULL, &didFinishLaunching, (CFStringRef)UIApplicationDidFinishLaunchingNotification, NULL, CFNotificationSuspensionBehaviorDeliverImmediately);
 }

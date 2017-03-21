@@ -13,5 +13,5 @@ duislingrmr_LIBRARIES = Liberation substrate c++
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
-SUBPROJECTS += mrsettings
-include $(THEOS_MAKE_PATH)/aggregate.mk
+#SUBPROJECTS += mrsettings
+#include $(THEOS_MAKE_PATH)/aggregate.mk
